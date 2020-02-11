@@ -12,7 +12,7 @@ double makeNoise(double dTime)
     double amp = 0.2;
     double output =amp * sin(freq * 2 * 3.14159 * dTime);  //sine wave
     
-    return output;
+   // return output;
 
     // square wave 
     if (output > 0)
