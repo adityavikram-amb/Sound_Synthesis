@@ -29,12 +29,15 @@ double makeNoise(double dTime)
 
 int main()
 {
+    ifstream fin;
     double basefreq[5] = { 55.0,110.0,220.0,440.0,880.0 }; //a4
     double note [5][12];
     string table = "AABCCDDEFFGG";
     string Happy_Birthday = "4C 4C 4D 4C 4F 4E ";
     string Sweet_Child = "4C#5C#4G#4F#5F#4G#5F 4G#";
-    string song = Sweet_Child;
+    string song = Happy_Birthday;
+    fin.open("music.txt");
+    getline(fin,song);
     for (int i = 0; i < 5; i++)
     {
         for (int j = 0; j < 12; j++)
@@ -45,7 +48,6 @@ int main()
         }
         cout << endl;
     }
-    wcout << "Hello World!\n";
 
     cout << table.length()<<endl;
     for (int i =0;i< table.length();i+=2)
