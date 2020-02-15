@@ -10,7 +10,7 @@ atomic<double> freq = 0;
 double makeNoise(double dTime)
 {
     double amp = 1;
-    double output = amp * sin(freq * 2 * 3.14159 * dTime)+amp*0.5*freq*dTime*sin(freq*2*pi*dTime);   //sine wave
+    double output = amp * sin(freq * 2 * 3.14159 * dTime)+amp*0.5*freq*dTime*sin(freq*2*pi*dTime);  //sine wave
 
     
 
