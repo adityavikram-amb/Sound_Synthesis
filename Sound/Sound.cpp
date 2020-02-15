@@ -6,13 +6,17 @@ using namespace std;
 
 atomic<double> freq = 0;
 
-
+#define pi 3.14159
 double makeNoise(double dTime)
 {
-    double amp = 0.2;
-    double output = amp * sin(freq * 2 * 3.14159 * dTime);  //sine wave
+    double amp = 1;
+    double output = amp * sin(freq * 2 * 3.14159 * dTime)+amp*0.5*freq*dTime*sin(freq*2*pi*dTime);  //sine wave
+
     
-   // return output;
+
+    output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) +  sin(pi * (freq * dTime+0.66)); //piano like
+    output *= 2;
+    return output;
 
     // square wave 
     if (output > 0)
@@ -30,7 +34,7 @@ double makeNoise(double dTime)
 int main()
 {
     ifstream fin;
-    double basefreq[5] = { 55.0,110.0,220.0,440.0,880.0 }; //a4
+    double basefreq[5] = { 55.0,110.0,220.0,440.0,880.0 }; //a
     double note [5][12];
     string table = "AABCCDDEFFGG";
     string Happy_Birthday = "4C 4C 4D 4C 4F 4E ";
@@ -78,7 +82,7 @@ int main()
     while (1)
     {
         //manual_piano
-     /*
+     
         pressed = 0;
         for (int k = 0; k < 15; k++)
         {
@@ -93,7 +97,7 @@ int main()
             freq = 0.0;
         }
 
-*/
+        
         
 
         /*
@@ -114,28 +118,36 @@ int main()
             freq = 418;
             Sleep(timex);
             */
+
+        
         for (int i = 0; i < song.length()-2; i+=3)
         {
+            
             if (song[i + 2] == ' ')
             {
-                freq = note[song[i] - '0'-1][table.find(song[i+1])];
-                cout << song[i]<<" " << song[i + 1]<<"  "<<freq << endl;
-                Sleep(timex);
-                freq = 0;
+                    freq = note[song[i] - '0' - 1][table.find(song[i + 1])];
+                    cout << song[i] << " " << song[i + 1] << "  " << freq << endl;
+                    Sleep(timex);
+                    freq = 0;
+                  
+                
                 
             }
             if (song[i + 2] == '#')
             {
-                freq = note[song[i] - '0' - 1][table.find(song[i + 1])+1];
-                cout << song[i] << " " << song[i + 1] << "# " << freq << endl;
-                Sleep(timex);
-                freq = 0;
+
+                
+                    freq = note[song[i] - '0' - 1][table.find(song[i + 1]) + 1];
+                    cout << song[i] << " " << song[i + 1] << "# " << freq << endl;
+                    Sleep(timex);
+                    freq = 0;
+                   
                 
             }
             Sleep(20);
         }
-
-
+        
+        
 
     }
 }

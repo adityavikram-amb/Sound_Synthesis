@@ -29,4 +29,9 @@
       <Filter>Source Files</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\Documents\Sound recordings\Sweet_Child.m4a">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>
