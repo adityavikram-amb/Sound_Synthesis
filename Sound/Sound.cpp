@@ -14,7 +14,7 @@ double makeNoise(double dTime)
 
     
 
-    output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) +  sin(pi * (freq * dTime+0.66)); //piano like
+    output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) +  sin(pi * (freq * dTime+0.66));  //piano like
     output *= 2;
     return output;
 
