@@ -1,6 +1,6 @@
 # Sound Generation
 
-A simple C++ program to generate audio notes.
+A simple C++ program to generate audio notes.<br />
 Uses native and windows libraries.
 
 ## Getting Started
