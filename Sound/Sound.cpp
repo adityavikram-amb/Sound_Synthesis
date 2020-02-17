@@ -14,8 +14,12 @@ double makeNoise(double dTime)
 
     
 
-    output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) +  sin(pi * (freq * dTime+0.66));  //piano like
-    output *= 2;
+    output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) +  sin(pi * (freq * dTime+0.66)); //piano like
+
+
+    output = sin(2 * pi * freq * dTime + freq * sin(2 * pi * .04 * freq * dTime));
+
+  //  output *= 2;
     return output;
 
     // square wave 
@@ -118,7 +122,7 @@ int main()
             freq = 418;
             Sleep(timex);
             */
-
+        /*
         
         for (int i = 0; i < song.length()-2; i+=3)
         {
@@ -146,7 +150,7 @@ int main()
             }
             Sleep(20);
         }
-        
+        */
         
 
     }
