@@ -1,6 +1,7 @@
 # Sound Generation
 
-A simple C++ program to generate audio notes.
+A simple C++ program to generate audio notes.<br />
+Uses native and windows libraries.
 
 ## Getting Started
 
@@ -17,7 +18,7 @@ Visual Studio 2019
 Before running the application include winmm.lib
 
 
-### And coding style tests
+### Coding style 
 
 Single line string input.
 Let i denote the i<sup>th</sup> index of string str.
