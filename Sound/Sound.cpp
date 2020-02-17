@@ -14,10 +14,13 @@ double makeNoise(double dTime)
 
     
 
-    output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) +  sin(pi * (freq * dTime+0.66)); //piano like
+  //  output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) +  sin(pi * (freq * dTime+0.66)); //piano like
 
 
-    output = sin(2 * pi * freq * dTime + freq * sin(2 * pi * .04 * freq * dTime));
+  //  output = sin(2 * pi * freq * dTime + freq * sin(2 * pi * .04 * freq * dTime)); // Vibrato Edit: Base
+
+    output = sin(2 * pi * freq * dTime + freq * sin(2 * pi * .04 * freq * dTime)); // Vibrato Edit: Base
+    output = sin(2 * pi * freq * dTime)*cos(2 * pi * freq * dTime * 0.04);          // Tremolo Effect
 
   //  output *= 2;
     return output;
