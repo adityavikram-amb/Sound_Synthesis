@@ -116,8 +116,6 @@ public:
 		return m_dGlobalTime;
 	}
 
-
-
 public:
 	static vector<wstring> Enumerate()
 	{
@@ -142,7 +140,6 @@ public:
 		else
 			return fmax(dSample, -dMax);
 	}
-
 
 private:
 	double(*m_userFunction)(double);
