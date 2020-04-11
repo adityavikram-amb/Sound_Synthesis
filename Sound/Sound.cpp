@@ -12,14 +12,14 @@ double makeNoise(double dTime)
 	double amp = 1;
 	double output = amp * sin(freq * 2 * 3.14159 * dTime) + amp * 0.5 * freq * dTime * sin(freq * 2 * pi * dTime);  //sine wave
 
-  //  output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) +  sin(pi * (freq * dTime+0.66)); //piano like
+//	output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) + sin(pi * (freq * dTime + 0.66)); //piano like
 
-  //  output = sin(2 * pi * freq * dTime + freq * sin(2 * pi * .04 * freq * dTime)); // Vibrato Edit: Base
+	//output = sin(2 * pi * freq * dTime + freq * sin(2 * pi * 2 * freq * dTime)); // Vibrato Edit: Base
 
 //	output = sin(2 * pi * freq * dTime + freq * sin(2 * pi * .04 * freq * dTime)); // Vibrato Edit: Base
-	output = sin(2 * pi * freq * dTime) * cos(2 * pi * freq * dTime * 0.04);          // Tremolo Effect
+//	output = sin(2 * pi * freq * dTime) * cos(2 * pi * freq * dTime * 0.4);          // Tremolo Effect
 
-  //  output *= 2;
+//  output *= 2;
 	return output;
 
 	// square wave
@@ -113,25 +113,27 @@ int main()
 			Sleep(timex);
 			*/
 			/*
-
-			for (int i = 0; i < song.length()-2; i+=3)
-			{
-				if (song[i + 2] == ' ')
-				{
-						freq = note[song[i] - '0' - 1][table.find(song[i + 1])];
-						cout << song[i] << " " << song[i + 1] << "  " << freq << endl;
-						Sleep(timex);
+					for (int i = 0; i < song.length() - 2; i += 3)
+					{
+						if (song[i + 2] == ' ')
+						{
+							freq = note[song[i] - '0' - 1][table.find(song[i + 1])];
+							cout << song[i] << " " << song[i + 1] << "  " << freq << endl;
+							Sleep(timex);
+						}
+						if (song[i + 2] == '#')
+						{
+							freq = note[song[i] - '0' - 1][table.find(song[i + 1]) + 1];
+							cout << song[i] << " " << song[i + 1] << "# " << freq << endl;
+							Sleep(timex);
+						}
+						if (i == song.length() - 3)
+						{
+							Sleep(500);
+						}
 						freq = 0;
-				}
-				if (song[i + 2] == '#')
-				{
-						freq = note[song[i] - '0' - 1][table.find(song[i + 1]) + 1];
-						cout << song[i] << " " << song[i + 1] << "# " << freq << endl;
-						Sleep(timex);
-						freq = 0;
-				}
-				Sleep(20);
-			}
-			*/
+						Sleep(120);
+					}
+					*/
 	}
 }
