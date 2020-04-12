@@ -12,7 +12,7 @@ double makeNoise(double dTime)
 	double amp = 1;
 	double output = amp * sin(freq * 2 * 3.14159 * dTime) + amp * 0.5 * freq * dTime * sin(freq * 2 * pi * dTime);  //sine wave
 
-//	output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) + sin(pi * (freq * dTime + 0.66)); //piano like
+//	output = sin(freq * pi * dTime) * sin(freq * pi * dTime) * sin(freq * pi * dTime) + sin(pi * (freq * dTime + 0.66)); //somewhat piano like
 
 	//output = sin(2 * pi * freq * dTime + freq * sin(2 * pi * 2 * freq * dTime)); // Vibrato Edit: Base
 
